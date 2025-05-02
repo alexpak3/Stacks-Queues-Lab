@@ -2,6 +2,8 @@ package interfaces;
 
 import common.QueueEmptyException;
 import common.QueueFullException;
+import common.StackEmptyException;
+import common.StackOverflowException;
 
 /**
  * Simple queue interface.
@@ -15,7 +17,7 @@ public interface IQueue {
      * @param element the element to be queued
      * @throws QueueFullException if there is no room in the queue for the new element
      */
-    void enqueue(Object element) throws QueueFullException;
+    void enqueue(Object element) throws QueueFullException, StackOverflowException;
 
     /**
      * Removes the element at the head of the queue.
@@ -23,7 +25,7 @@ public interface IQueue {
      * @return the element removed
      * @throws QueueEmptyException if the queue is empty
      */
-    Object dequeue() throws QueueEmptyException;
+    Object dequeue() throws QueueEmptyException, StackEmptyException;
 
     /**
      * Returns the number of elements in the queue.
@@ -36,6 +38,8 @@ public interface IQueue {
      * @return true if the queue is empty
      */
     boolean isEmpty();
+
+    boolean isFull();
 
     /**
      * Removes all elements from the queue.

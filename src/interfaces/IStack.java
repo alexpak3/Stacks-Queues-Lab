@@ -49,4 +49,5 @@ public interface IStack {
      * Removes all elements from the stack.
      */
     void clear();
+
 }

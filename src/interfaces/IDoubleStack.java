@@ -17,4 +17,6 @@ public interface IDoubleStack {
      * @return the first stack in the double stack
      */
     IStack getSecondStack();
+
+
 }
